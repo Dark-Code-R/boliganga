@@ -1,0 +1,139 @@
+/* === OVERLAY GENERAL (Scroll activado) === */
+.solo-pc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+}
+
+/* === LOGO SUPERIOR CENTRADO === */
+.solo-pc-header {
+  width: 100%;
+  padding: 20px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.solo-pc-logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+/* === FONDO CON PERSONAJES === */
+.solo-pc-seccion-arriba {
+  position: relative;
+  width: 100%;
+  background: url('../assets/portada.avif') no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 0;
+}
+
+.solo-pc-personajes-arriba {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  animation: fadeInDown 0.8s ease;
+  pointer-events: none;
+}
+
+/* === TEXTO + ICONO + CHICA === */
+.solo-pc-seccion-texto {
+  padding: 50px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+.solo-pc-texto p {
+  font-size: 1.9rem;
+  line-height: 1.5;
+  font-weight: 600;
+  max-width: 90%;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.solo-pc-texto strong {
+  color: #FFD700;
+  font-weight: 800;
+}
+
+.solo-pc-icono {
+  font-size: 60px;
+  color: white;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease;
+}
+
+.solo-pc-icono:hover {
+  transform: scale(1.2);
+  color: #FFD700;
+}
+
+/* === CHICA DECORATIVA ABAJO === */
+.solo-pc-chica-abajo {
+  max-height: 380px;
+  width: auto;
+  object-fit: contain;
+  animation: fadeInUp 0.8s ease;
+  pointer-events: none;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .solo-pc-texto p {
+    font-size: 1.5rem;
+  }
+
+  .solo-pc-icono {
+    font-size: 44px;
+    margin-bottom: 40px;
+  }
+
+  .solo-pc-chica-abajo {
+    max-height: 300px;
+  }
+
+  .solo-pc-logo {
+    height: 44px;
+  }
+
+  .solo-pc-seccion-texto {
+    padding: 40px 16px 80px;
+  }
+}

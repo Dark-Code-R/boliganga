@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo de la portada */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Capa oscura encima del fondo */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* Contenedor del título principal */
+.hero-content {
+  position: absolute;
+  top: 12vh;
+  width: 100%;
+  text-align: center;
+  z-index: 4;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Texto principal */
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  animation: glowTitle 2s ease-in-out infinite alternate;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.hero-title span {
+  color: #FFD700;
+}
+
+/* Botones */
+.cta-buttons {
+  position: absolute;
+  bottom: 1vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+/* Botón negro: ¿CÓMO ENTRAR? */
+.info-button {
+  background-color: #000;
+  color: #fff;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 6;
+}
+
+.info-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  background: #FFD700;
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.info-button:hover::after {
+  height: 100%;
+}
+
+.info-button:hover {
+  color: #000;
+  font-weight: 800;
+}
+
+/* Botón amarillo: HACER WHITELIST → */
+.whitelist-button {
+  background-color: #FFD700;
+  color: black;
+  padding: 18px 46px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 60px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseGlow 2s infinite;
+}
+
+.whitelist-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.7);
+}
+
+/* Imagen de personajes */
+.hero-characters {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  z-index: 4; /* Encima del triángulo */
+  animation: fadeUp 1.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Triángulo negro inferior */
+.hero-bottom-curve {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: black;
+  z-index: 3;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowTitle {
+  0% {
+    text-shadow: 1px 1px 3px #000;
+  }
+  100% {
+    text-shadow: 0 0 8px white, 0 0 15px #FFD700;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* === RESPONSIVE para móvil === */
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .info-button,
+  .whitelist-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}

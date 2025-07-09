@@ -1,0 +1,194 @@
+/* === MODAL OVERLAY === */
+.ingreso-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 0.5s ease;
+  transition: opacity 0.4s ease;
+}
+
+.ingreso-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.ingreso-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  position: relative;
+  animation: fadeInUp 0.5s ease;
+}
+
+/* === IMAGEN DE PERSONAJE === */
+.ingreso-personaje {
+  max-height: 420px;
+  width: auto;
+  object-fit: contain;
+  animation: slideInLeft 0.6s ease;
+}
+
+/* === PANEL DE TEXTO Y BOTONES === */
+.ingreso-panel {
+  flex: 1;
+  text-align: center;
+  max-width: 500px;
+  animation: slideInRight 0.6s ease;
+}
+
+/* === LOGO DE GTA === */
+.gta-logo {
+  height: 80px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+/* === TEXTO PRINCIPAL === */
+.ingreso-panel h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.ingreso-panel h2 strong {
+  font-weight: 800;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* === GRUPO DE BOTONES === */
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* === ESTILO BOTONES === */
+.botones button,
+.botones a {
+  background: white;
+  color: black;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.botones button:hover,
+.botones a:hover {
+  transform: scale(1.08);
+  background: #f4f4f4;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* === ICONOS DE PLATAFORMAS === */
+.icono-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+}
+
+/* === BOTÓN DE CIERRE === */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* === ANIMACIÓN DE ENTRADA === */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .ingreso-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .ingreso-personaje {
+    max-height: 320px;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
+
+  .botones button,
+  .botones a {
+    width: 80%;
+    justify-content: center;
+  }
+
+  .close-btn {
+    top: 20px;
+    right: 20px;
+  }
+}

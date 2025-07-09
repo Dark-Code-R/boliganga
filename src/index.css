@@ -1,0 +1,43 @@
+/* Reset general */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente y colores globales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e; /* Fondo oscuro tipo GTA */
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Asegura que las imágenes se escalen correctamente */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Quita subrayado de enlaces por defecto */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mejora de experiencia visual en scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evita que el contenido se esconda detrás del navbar fijo */
+main {
+  padding-top: 70px; /* Ajusta al alto del navbar fijo */
+}
+body, html {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
