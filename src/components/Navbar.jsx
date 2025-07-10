@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const handleJugarClick = (e) => {
     e.preventDefault();
-    navigate('/'); // redirige a Home
+    navigate('/'); 
   };
 
   return (

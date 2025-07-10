@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import anime from 'animejs';
-import '../styles/DonacionesSection.css'; // Puedes renombrarlo luego a NormativaSection.css si gustas
-import portada from '../assets/portada.avif';
-import personaje from '../assets/Pesona-mafia.avif'; // Cambia si tienes otro personaje
+import '../styles/DonacionesSection.css'; 
+import portada from '../assets/fondo-bolivia-noche.png';
+import personaje from '../assets/padrecito.png'; 
 
 export default function NormativaSection() {
   const sectionRef = useRef(null);

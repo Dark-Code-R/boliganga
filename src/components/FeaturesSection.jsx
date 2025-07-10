@@ -4,11 +4,11 @@ import anime from 'animejs';
 import '../styles/FeaturesSection.css';
 
 import chica from '../assets/chica.avif';
-import viejo from '../assets/viejo.avif';
-import personaMafia from '../assets/Pesona-mafia.avif';
-import fondoAtardecer from '../assets/fondo-atardecer.avif';
-import fondoDia from '../assets/fondo-dia.avif';
-import portada from '../assets/portada.avif';
+import viejo from '../assets/Pesona-mafia.avif';
+import personaMafia from '../assets/chino.png';
+import fondoAtardecer from '../assets/fondo-bolivia.png';
+import fondoDia from '../assets/fondo-atardecer.png';
+import portada from '../assets/fondo-tardenoche2.png';
 
 import logoTwitch from '../assets/logo-twitch.png';
 import logoYouTube from '../assets/logo-youtube.png';
@@ -42,7 +42,6 @@ const FeaturesSection = () => {
 
   return (
     <section className="features-section">
-      
       <div className="feature-box layout-izquierda yellow-overlay">
         <div
           className="feature-bg rellax-bg"
@@ -59,6 +58,11 @@ const FeaturesSection = () => {
           </p>
           <div className="logos-row">
             <img
+              src={logoKick}
+              alt="Kick"
+              className="feature-logo animated-logo"
+            />
+            <img
               src={logoTwitch}
               alt="Twitch"
               className="feature-logo animated-logo"
@@ -68,12 +72,8 @@ const FeaturesSection = () => {
               alt="YouTube"
               className="feature-logo animated-logo"
             />
-            <img
-              src={logoKick}
-              alt="Kick"
-              className="feature-logo animated-logo"
-            />
           </div>
+
           <a
             className="feature-button"
             href="https://discord.com/invite/H4yp4ncYM5?ref=streamer"
@@ -91,7 +91,6 @@ const FeaturesSection = () => {
         />
       </div>
 
-   
       <div className="feature-box layout-derecha">
         <div
           className="feature-bg rellax-bg"
@@ -119,7 +118,6 @@ const FeaturesSection = () => {
         </div>
       </div>
 
-   
       <div className="feature-box layout-izquierda">
         <div
           className="feature-bg rellax-bg"

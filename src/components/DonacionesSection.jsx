@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import Papa from 'papaparse';
 import anime from 'animejs';
 import '../styles/DonacionesSection.css';
-import portada from '../assets/portada.avif';
-import personaje from '../assets/persona-donaciones.avif';
+import portada from '../assets/fondo-atardecer.png';
+import personaje from '../assets/blancourt.png';
 
 export default function DonacionesSection() {
   const [paquetes, setPaquetes] = useState([]);
@@ -11,7 +11,8 @@ export default function DonacionesSection() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTv8ygIvAIX1oAMUFz5EF3uFDUN9F9_0gesOIjbxNplezsxWPlBQYOL3er7k2AmFUc_uOzj7pnz33tU/pub?gid=0&single=true&output=csv';
+    const url = import.meta.env.VITE_SHEET_URL;
+
 
     Papa.parse(url, {
       download: true,

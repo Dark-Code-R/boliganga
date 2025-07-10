@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import anime from 'animejs';
 import '../styles/IngresoSteps.css';
 
-// Imágenes y logos
+
 import gtaLogo from '../assets/logo-gta.avif';
 import personaje1 from '../assets/persona-sola.avif';
 import personaje2 from '../assets/persona-donaciones2.avif';

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/HeroSection.css';
-import portada from '../assets/portada.avif';
-import personajes from '../assets/personajes.avif';
+import portada from '../assets/fondo-bolivia-noche.png';
+import personajes from '../assets/toati_tolete.png';
 
 const HeroSection = ({ onAbrirIngreso }) => {
   return (

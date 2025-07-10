@@ -5,6 +5,8 @@ import '../styles/RulesSection.css';
 import aguimerLogo from '../assets/Aguimer.webp';
 import kamikazeLogo from '../assets/kamikaze_evil.webp';
 import tiktokLogo from '../assets/logo_tiktok.jpeg';
+import giulioPerfil from '../assets/guilio-perfil.webp'; 
+import blancourdPerfil from '../assets/blancourt-perfil.jpeg'; 
 
 export default function RulesSection() {
   const sectionRef = useRef(null);
@@ -52,7 +54,6 @@ export default function RulesSection() {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => observer.disconnect();
   }, []);
 
@@ -74,6 +75,18 @@ export default function RulesSection() {
       href: 'https://www.tiktok.com/@boligangaroleplayoficial',
       img: tiktokLogo,
       alt: 'TikTok Boliganga RP',
+    },
+    {
+      name: '@Giulio',
+      href: 'https://kick.com/giulio',
+      img: giulioPerfil,
+      alt: 'Giulio Kick',
+    },
+    {
+      name: '@blancourtjosh',
+      href: 'https://www.tiktok.com/@blancourtjosh',
+      img: blancourdPerfil,
+      alt: 'Blancourt TikTok',
     },
   ];
 
