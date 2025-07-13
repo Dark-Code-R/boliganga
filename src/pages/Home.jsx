@@ -13,17 +13,11 @@ import Footer from "../components/Footer";
 // COMPONENTES EXTRA
 import DiscordFloatingButton from "../components/DiscordFloatingButton";
 import IngresoSteps from "../components/IngresoSteps";
-import SoloPC from "../components/SoloPC"; // 👈 nuevo componente de advertencia
 
 export default function Home() {
   const [mostrarIngreso, setMostrarIngreso] = useState(false);
-  const [soloPc, setSoloPc] = useState(false);
 
   useEffect(() => {
-    // Detectar si está en un dispositivo móvil
-    const isMobile = window.innerWidth < 768;
-    setSoloPc(isMobile);
-
     // Animaciones scroll-fade
     const elements = document.querySelectorAll(".scroll-fade");
     const observer = new IntersectionObserver(
@@ -38,7 +32,7 @@ export default function Home() {
     );
     elements.forEach((el) => observer.observe(el));
 
-    // Animación Parallax con Rellax
+    // Parallax con Rellax
     if (document.querySelector(".rellax")) {
       new Rellax(".rellax", {
         speed: -3,
@@ -53,15 +47,11 @@ export default function Home() {
     };
   }, []);
 
-  // Mostrar advertencia si es móvil
-  if (soloPc) return <SoloPC />;
-
   return (
     <>
       <DiscordFloatingButton />
       <Navbar />
 
-      {/* Hero con botón para abrir el modal */}
       <div id="jugar">
         <HeroSection onAbrirIngreso={() => setMostrarIngreso(true)} />
       </div>
@@ -71,7 +61,6 @@ export default function Home() {
       <RulesSection />
       <Footer />
 
-      {/* Modal tipo GTA V */}
       {mostrarIngreso && <IngresoSteps onClose={() => setMostrarIngreso(false)} />}
     </>
   );

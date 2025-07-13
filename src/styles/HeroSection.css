@@ -6,9 +6,13 @@
   height: 100vh;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 
-/* Fondo de la portada */
+/* Fondo */
 .hero-background {
   position: absolute;
   top: 0;
@@ -19,7 +23,7 @@
   z-index: 1;
 }
 
-/* Capa oscura encima del fondo */
+/* Capa oscura */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -30,17 +34,17 @@
   z-index: 2;
 }
 
-/* Contenedor del título principal */
+/* Contenido del título */
 .hero-content {
-  position: absolute;
-  top: 12vh;
+  position: relative;
+  margin-top: 12vh;
   width: 100%;
   text-align: center;
   z-index: 4;
   animation: fadeDown 1s ease-out;
 }
 
-/* Texto principal */
+/* Título */
 .hero-title {
   font-size: 2.8rem;
   font-weight: 800;
@@ -59,18 +63,17 @@
 
 /* Botones */
 .cta-buttons {
-  position: absolute;
-  bottom: 1vh;
-  width: 100%;
+  margin-top: auto;
+  margin-bottom: 4vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 14px;
   z-index: 5;
+  position: relative;
 }
 
-/* Botón negro: ¿CÓMO ENTRAR? */
+/* Botón negro */
 .info-button {
   background-color: #000;
   color: #fff;
@@ -108,7 +111,7 @@
   font-weight: 800;
 }
 
-/* Botón amarillo: HACER WHITELIST → */
+/* Botón amarillo */
 .whitelist-button {
   background-color: #FFD700;
   color: black;
@@ -128,14 +131,13 @@
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.7);
 }
 
-/* Imagen de personajes */
+/* Personajes */
 .hero-characters {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  max-height: 65vh;
+  max-height: 60vh;
   object-fit: contain;
-  z-index: 4; /* Encima del triángulo */
+  z-index: 4;
   animation: fadeUp 1.6s ease-out forwards;
   opacity: 0;
 }
@@ -151,7 +153,7 @@
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
 }
 
-/* === ANIMACIONES === */
+/* ANIMACIONES */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -195,15 +197,42 @@
   }
 }
 
-/* === RESPONSIVE para móvil === */
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
+  .hero {
+    height: auto;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    max-width: 90%;
+  }
+
+  .hero-content {
+    margin-top: 10vh;
+    padding: 0 10px;
+  }
+
+  .cta-buttons {
+    margin-bottom: 4vh;
+    gap: 10px;
+    padding: 0 20px;
   }
 
   .info-button,
   .whitelist-button {
-    padding: 12px 24px;
-    font-size: 0.95rem;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .hero-characters {
+    max-height: 35vh;
+  }
+
+  .hero-bottom-curve {
+    height: 80px;
   }
 }

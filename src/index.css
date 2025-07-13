@@ -41,3 +41,38 @@ body, html {
   margin: 0;
   padding: 0;
 }
+/* ========== RESPONSIVE GLOBAL PARA MÓVILES ========== */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 1rem; /* Agrega espacio lateral en móviles */
+  }
+
+  main {
+    padding-top: 60px; /* Ajusta si el navbar es más pequeño en móviles */
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}

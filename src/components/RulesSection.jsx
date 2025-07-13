@@ -12,48 +12,54 @@ export default function RulesSection() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const animate = () => {
+      anime.timeline()
+        .add({
+          targets: '.rules-title',
+          translateY: [-60, 0],
+          opacity: [0, 1],
+          duration: 900,
+          easing: 'easeOutExpo',
+        })
+        .add({
+          targets: '.streamer-card',
+          opacity: [0, 1],
+          translateY: [40, 0],
+          scale: [0.9, 1],
+          delay: anime.stagger(250),
+          duration: 1000,
+          easing: 'easeOutElastic(1, .8)',
+        }, '-=600')
+        .add({
+          targets: '.discord-widget-container',
+          opacity: [0, 1],
+          translateY: [50, 0],
+          duration: 1000,
+          easing: 'easeOutExpo',
+        }, '-=500')
+        .add({
+          targets: '.legal-disclaimer',
+          opacity: [0, 1],
+          translateY: [30, 0],
+          duration: 800,
+          easing: 'easeOutExpo',
+        }, '-=600');
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          anime.timeline()
-            .add({
-              targets: '.rules-title',
-              translateY: [-60, 0],
-              opacity: [0, 1],
-              duration: 900,
-              easing: 'easeOutExpo',
-            })
-            .add({
-              targets: '.streamer-card',
-              opacity: [0, 1],
-              translateY: [40, 0],
-              scale: [0.9, 1],
-              delay: anime.stagger(250),
-              duration: 1000,
-              easing: 'easeOutElastic(1, .8)',
-            }, '-=600')
-            .add({
-              targets: '.discord-widget-container',
-              opacity: [0, 1],
-              translateY: [50, 0],
-              duration: 1000,
-              easing: 'easeOutExpo',
-            }, '-=500')
-            .add({
-              targets: '.legal-disclaimer',
-              opacity: [0, 1],
-              translateY: [30, 0],
-              duration: 800,
-              easing: 'easeOutExpo',
-            }, '-=600');
-
-          observer.disconnect();
+          animate();
+          observer.disconnect(); // 👈 Detiene para que no se repita
         }
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     return () => observer.disconnect();
   }, []);
 

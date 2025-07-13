@@ -53,14 +53,14 @@
 }
 
 .feature-content h2 {
-  font-size: 2.4rem; /* reducido para más estética */
+  font-size: 2.4rem;
   font-weight: 800;
   text-shadow: 2px 2px 5px black;
   margin-bottom: 16px;
 }
 
 .feature-content p {
-  font-size: 1.1rem; /* más pequeño */
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 22px;
   text-shadow: 1px 1px 4px black;
@@ -92,6 +92,7 @@
   justify-content: center;
   gap: 30px;
   margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
 .feature-logo {
@@ -100,11 +101,11 @@
   filter: drop-shadow(0 2px 4px black);
 }
 
-/* Imagen del personaje: chica (derecha) */
+/* Imagen del personaje */
 .feature-character {
   position: absolute;
   right: 0;
-  bottom: -120px; /* más abajo para sobresalir */
+  bottom: -120px;
   height: 130%;
   z-index: 5;
   pointer-events: none;
@@ -116,6 +117,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 60px 100px;
+  display: flex;
+  align-items: center;
 }
 
 .negocio-layout .feature-content {
@@ -124,53 +127,18 @@
   z-index: 6;
 }
 
-/* Viejo sobresaliendo más */
+/* Viejo personaje */
 .viejo-personaje {
   position: absolute;
   left: 0;
-  bottom: -120px; /* más afuera */
+  bottom: -120px;
   height: 180%;
   z-index: 5;
   pointer-events: none;
   object-fit: contain;
 }
 
-/* Responsive */
-@media screen and (max-width: 1024px) {
-  .feature-box {
-    height: auto;
-    flex-direction: column;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .feature-content h2 {
-    font-size: 2rem;
-  }
-
-  .feature-content p {
-    font-size: 1rem;
-  }
-
-  .feature-character,
-  .feature-character.overlap,
-  .viejo-personaje {
-    position: static;
-    height: auto;
-    max-height: 360px;
-    margin-top: 30px;
-  }
-
-  .negocio-layout {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .negocio-layout .feature-content {
-    text-align: center;
-  }
-}
+/* Mafia personaje */
 .mafia-personaje {
   position: absolute;
   left: 0;
@@ -179,4 +147,99 @@
   z-index: 5;
   pointer-events: none;
   object-fit: contain;
+}
+
+/* ======================== */
+/*       RESPONSIVE         */
+/* ======================== */
+
+@media screen and (max-width: 768px) {
+  .feature-box {
+    height: auto;
+    flex-direction: column;
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+
+  .feature-bg {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .feature-content {
+    z-index: 6;
+    padding: 0 10px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .feature-content h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .feature-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .feature-button {
+    font-size: 0.9rem;
+    padding: 12px 24px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .logos-row {
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .feature-logo {
+    width: 40px;
+  }
+
+  .feature-character,
+.viejo-personaje,
+.mafia-personaje {
+  position: absolute !important;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: auto;
+  max-height: 40%;
+  width: auto;
+  margin: 0;
+  object-fit: contain;
+  z-index: 5;
+}
+
+/* Asegúrate de dejar espacio para que no tapen el texto */
+.feature-box {
+  padding-bottom: 180px;
+}
+
+
+  .negocio-layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .negocio-layout .feature-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .yellow-overlay::before {
+    background: linear-gradient(to bottom, rgba(255, 204, 0, 0.3), rgba(0, 0, 0, 0.75));
+  }
+
+  .feature-box::before {
+    background: linear-gradient(to bottom, rgba(25, 25, 25, 0.2), rgba(0, 0, 0, 0.8));
+  }
 }

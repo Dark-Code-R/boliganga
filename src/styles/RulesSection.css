@@ -163,3 +163,11 @@
     padding: 15px;
   }
 }
+@media screen and (max-width: 768px) {
+  .streamer-card,
+  .discord-widget-container,
+  .legal-disclaimer {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
