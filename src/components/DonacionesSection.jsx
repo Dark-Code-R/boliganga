@@ -11,7 +11,7 @@ export default function DonacionesSection() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const url = import.meta.env.VITE_SHEET_URL;
+    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTv8ygIvAIX1oAMUFz5EF3uFDUN9F9_0gesOIjbxNplezsxWPlBQYOL3er7k2AmFUc_uOzj7pnz33tU/pub?gid=0&single=true&output=csv";
 
 
     Papa.parse(url, {
