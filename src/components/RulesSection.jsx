@@ -80,7 +80,7 @@ export default function RulesSection() {
       name: '@boligangaroleplayoficial',
       href: 'https://www.tiktok.com/@boligangaroleplayoficial',
       img: tiktokLogo,
-      alt: 'TikTok Boliganga RP',
+      alt: 'TikTok Boliganga ',
     },
     {
       name: '@Giulio',
@@ -124,7 +124,7 @@ export default function RulesSection() {
       </div>
 
       <p className="legal-disclaimer">
-        Boliganga RP no está afiliado ni respaldado por Rockstar North, Take-Two Interactive, FiveM ni por ningún titular de derechos correspondiente. Todas las marcas comerciales y contenidos utilizados pertenecen a sus respectivos propietarios. Boliganga RP se reserva todos los derechos sobre las imágenes, logotipos y material visual de su autoría o uso legítimo en esta plataforma.
+        Boliganga no está afiliado ni respaldado por Rockstar North, Take-Two Interactive, FiveM ni por ningún titular de derechos correspondiente. Todas las marcas comerciales y contenidos utilizados pertenecen a sus respectivos propietarios. Boliganga  se reserva todos los derechos sobre las imágenes, logotipos y material visual de su autoría o uso legítimo en esta plataforma.
       </p>
     </section>
   );

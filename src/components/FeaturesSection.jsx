@@ -3,16 +3,16 @@ import Rellax from 'rellax';
 import anime from 'animejs';
 import '../styles/FeaturesSection.css';
 
-import chica from '../assets/chica.avif';
-import viejo from '../assets/Pesona-mafia.avif';
+import chica from '../assets/maite.png';
+import viejo from '../assets/padrecito.png';
 import personaMafia from '../assets/chino.png';
 import fondoAtardecer from '../assets/fondo-bolivia.png';
 import fondoDia from '../assets/fondo-atardecer.png';
 import portada from '../assets/fondo-tardenoche2.png';
 
-import logoTwitch from '../assets/logo-twitch.png';
-import logoYouTube from '../assets/logo-youtube.png';
-import logoKick from '../assets/logo-kick.png';
+import logoTwitch from '../assets/tiktoklogo.png';
+import logoYouTube from '../assets/logotwitch.png';
+import logoKick from '../assets/logokick.png';
 
 const FeaturesSection = () => {
   useEffect(() => {
@@ -54,7 +54,7 @@ const FeaturesSection = () => {
           </h2>
           <p>
             ¡Aplica para ser <strong>streamer</strong> de{" "}
-            <strong>Escuela RP</strong>!
+            <strong>Boliganga RP</strong>!
           </p>
           <div className="logos-row">
             <img

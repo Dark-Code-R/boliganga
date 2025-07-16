@@ -48,7 +48,8 @@ export default function NormativaSection() {
       <div className="donaciones-hero" style={{ backgroundImage: `url(${portada})` }}>
         <img src={personaje} alt="personaje" className="hero-personaje" />
         <div className="hero-title-wrapper">
-          <h1 className="donaciones-header-text">NORMATIVA DE<br />ESCUELA RP</h1>
+          <h1 className="donaciones-header-text">NORMATIVA DE<br />CORONA CITY
+</h1>
         </div>
       </div>
 
